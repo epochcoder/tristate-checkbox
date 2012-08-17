@@ -1,0 +1,52 @@
+/* 
+    Document   : tristate-checkbox
+    Created on : 25 Aug 2010, 10:00:54 AM
+    Author     : willie
+    Description:
+        Handles the default styling for the tri state checkbox,
+        note that this stylesheet also requires the .clearfix class
+        which is located in global.css
+*/
+
+div.tristate {
+    border: 1px solid transparent;
+}
+
+div.tristate > span.text {
+    padding: 0 0 0 5px;
+    float: left;
+}
+
+div.tristate > span.image {
+    float: left;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    background-color: white;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+div.tristate > span.unchecked {
+    background-image: url("../images/unchecked.gif");
+}
+
+div.tristate > span.intermediate {
+    background-image: url("../images/intermediate.gif");
+}
+
+div.tristate > span.checked {
+    background-image: url("../images/checked.gif");
+}
+
+div.tristate > span.unchecked-highlight {
+    background-image: url("../images/unchecked_highlighted.gif");
+}
+
+div.tristate > span.intermediate-highlight {
+    background-image: url("../images/intermediate_highlighted.gif");
+}
+
+div.tristate > span.checked-highlight {
+    background-image: url("../images/checked_highlighted.gif");
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tristate Checkbox</title>
+		
+		<link rel="stylesheet" type="text/css" href="tristate-checkbox.css" media="screen">
+		
+		<script type="text/javascript" src="lib/prototype/prototype.js"></script>
+		<script type="text/javascript" src="lib/scriptaculous/scriptaculous.js"></script>
+		<script type="text/javascript" src="tristate-checkbox.js"></script>
+	</head>
+	<body>
+        <div style="margin:10px; padding: 5px; border-radius: 5px; border: 1px solid #aaa">
+            <h1>Description</h1>
+            <p>
+                The <code>TristateCheckbox</code> allows any checkbox element to have an extra state defined.
+                this state means that some of it's children are selected, but not all of them
+            </p>
+            <p>
+                This gets determined by a built in <code>dependencySelector</code>.
+                it is customizable to almost any context
+            </p>
+            <p>
+                one tristate can even set the state of another, this is all built in via events
+            </p>
+            <h2>Basic Usage</h2>
+            <p>
+                <form id="basic-usage">
+                    <table>
+                        <tr>
+                            <td>Basic tri-state (has little to no function like this) : </td>
+                            <td>
+                                <input id="cb-1" type="checkbox"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <script>
+                    document.observe('dom:loaded', function() {
+                        new TriStateCheckbox('cb-1');
+                    });
+                </script>
+                <br/>
+                <pre>
+                <b>markup</b>
+                <code>
+                    &ltinput id=&quot;cb-1&quot; type=&quot;checkbox&quot;/&gt;
+                </code>
+                <b>script</b>
+                <code>
+                    document.observe('dom:loaded', function() {
+                        new TriStateCheckbox('cb-1');
+                    });
+                </code>
+                </pre>
+            </p>
+            <h2>Advanced Usage</h2>
+            <p>
+                <form id="adv-usage">
+                    <table>
+                        <tr>
+                            <td>normal tri-state : </td>
+                            <td>
+                                <input id="cb-a-1" type="checkbox"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>child 1 : </td>
+                            <td>
+                                <input id="cb-c-1" type="checkbox"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>child 2 : </td>
+                            <td>
+                                <input id="cb-c-2" type="checkbox"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>child 3 : </td>
+                            <td>
+                                <input id="cb-c-3" type="checkbox"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <script>
+                    document.observe('dom:loaded', function() {
+                        new TriStateCheckbox('cb-a-1', {
+                            dependantSelector: 'form#adv-usage input[id^="cb-c"]'
+                        });
+                    });
+                </script>
+                <br/>
+                <pre>
+                <b>markup</b>
+                <code>
+                    &ltinput id=&quot;cb-a-1&quot; type=&quot;checkbox&quot;/&gt;
+                    &ltinput id=&quot;cb-c-1&quot; type=&quot;checkbox&quot;/&gt;
+                    &ltinput id=&quot;cb-c-2&quot; type=&quot;checkbox&quot;/&gt;
+                    &ltinput id=&quot;cb-c-3&quot; type=&quot;checkbox&quot;/&gt;
+                </code>
+                <b>script</b>
+                <code>
+                    document.observe('dom:loaded', function() {
+                        new TriStateCheckbox('cb-a-1', {
+                            dependantSelector: 'form#adv-usage input[id^="cb-c"]'
+                        });
+                    });
+                </code>
+                </pre>
+            </p>
+        </div>
+	</body>
+</html>
