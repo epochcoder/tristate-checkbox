@@ -8,6 +8,8 @@ it is customizable to almost any context
 
 one tristate can even set the state of another, this is all built in via events
 
+[Demo](https://epochcoder.github.io/tristate-checkbox/)
+
 ## Basic Usage
 
 	<form id="basic-usage">
